@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Actualizar Autor</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar cambios</button>
+  </form>
+
+  <h2>Eliminar Autor</h2>
+  <a href="{% url 'author-delete' object.pk %}">
+    <button type="button">Eliminar</button>
+  </a>
+{% endblock %}

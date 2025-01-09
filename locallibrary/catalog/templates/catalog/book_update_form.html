@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Actualizar Book</h1>
+  <form method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    
+    <button type="submit">Guardar cambios</button>
+  </form>
+
+  <h2>Eliminar Book</h2>
+  <a href="{% url 'book-delete' object.pk %}">
+    <button type="button">Eliminar</button>
+  </a>
+{% endblock %}

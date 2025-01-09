@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Idioma: {{ language.name }}</h1>
+
+
+  <h2> Libros disponibles con este Idioma: </h2>
+  {% if book_list %}
+    <ul>
+      {% for book in book_list %}
+        <li>
+            <a href="{{ book.get_absolute_url }}">{{ book.title }}</a>
+        </li>
+      {% endfor%}
+    </ul>
+  {% else %}
+    <p>No se encontraron libros disponibles con este idioma.</p>
+  {% endif %}
+     
+  </ul>
+{% endblock %}

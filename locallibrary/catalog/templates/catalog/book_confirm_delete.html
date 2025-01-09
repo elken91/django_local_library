@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>Confirm Delete</h1>
+
+<p>Are you sure you want to delete the Book: {{ object }}?</p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Si, Eliminar</button>
+    <a href="{% url 'book-update' object.pk %}">Cancelar</a>
+</form>
+{% endblock %}
